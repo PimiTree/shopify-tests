@@ -1,0 +1,15 @@
+{
+  "type": "header",
+  "name": "main-header",
+  "sections": {
+    "header": {
+      "type": "main-header",
+      "settings": {
+        "header-text": "Some header text"
+      }
+    }
+  },
+  "order": [
+    "header"
+  ]
+}

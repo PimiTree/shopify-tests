@@ -1,0 +1,28 @@
+<!doctype html>
+<html class="js" lang="{{ request.locale.iso_code }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="icon" href="{{ 'favicon.png' | asset_url }}">
+    <title>{{ page_title }}</title>
+
+    {% style %}
+        --main-text-color: #000;
+    {% endstyle %}
+
+    <link rel="stylesheet" href="{{ 'index.css' | asset_url }}">
+</head>
+
+<body>
+
+<main>
+
+</main>
+
+
+
+<script src="{{ 'index.js' | asset_url }}"></script>
+</body>
+</html>

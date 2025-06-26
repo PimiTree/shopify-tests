@@ -10,9 +10,27 @@
 
     {{ content_for_header }}
 
-    {% style %}
-      --main-text-color: #000;
-    {% endstyle %}
+
+
+    <style>
+      :root {
+        --palette-1: #0000000F;
+        --palette-2: #0000001A;
+        --palette-3: #00000066;
+        --palette-4: #00000080;
+        --palette-5: #000;
+        --palette-6: #fff;
+        --palette-7: #F2F0F1;
+        --palette-8: #F0EEED;
+        --palette-9: #F0F0F0;
+        --palette-11: #01AB31;
+        --palette-12: #FFC633;
+        --palette-13: #FF3333;
+        --palette-14: #FF33331A;
+
+        --main-text-color: var(--palette-1);
+      }
+    </style>                                     
 
     <link rel="stylesheet" href="{{ 'index.css' | asset_url }}">
   </head>
@@ -20,15 +38,16 @@
   <body>
    {% sections 'header-group' %}
 
-    <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+    <main>
 
-      {{ settings.test }}
+      {{ settings.test | capitalize }}
 
+      Hello world
       {{ content_for_layout }}
     </main>
 
     {% sections 'footer-group' %}
 
-   <script src="{{ 'index.js' | asset_url }}"></script>
+   <script src="{{ 'index.js' | asset_url }}" defer></script>
   </body>
 </html>

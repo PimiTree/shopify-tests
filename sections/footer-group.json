@@ -1,0 +1,15 @@
+{
+  "type": "footer",
+  "name": "main-footer",
+  "sections": {
+    "footer": {
+      "type": "main-footer",
+      "settings": {
+        "footer-text": "Some header text"
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

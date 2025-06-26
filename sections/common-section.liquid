@@ -1,0 +1,17 @@
+<p>{{ section.settings.text }}</p>
+{% content_for 'blocks' %}
+
+{% schema %}
+{
+  "name": "Common Section",
+  "tag": "section",
+  "class": "common-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Common text"
+    }
+  ]
+}
+{% endschema %}
