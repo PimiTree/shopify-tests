@@ -5,19 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
+    <meta name="description" content="Some non-dynamic description">
+
     <link rel="icon" href="{{ 'favicon.png' | asset_url }}">
     <title>{{ page_title }}</title>
 
     {{ content_for_header }}
 
-
-
     <style>
+      @font-face {
+        font-family: 'Montserrat';
+        font-weight: 100 900;
+        font-display: swap;
+        src: url({{ "Montserrat-VariableFont_wght.woff2" | asset_url }}) format('woff2');
+      }
+
+
       :root {
         --palette-1: #0000000F;
         --palette-2: #0000001A;
         --palette-3: #00000066;
-        --palette-4: #00000080;
+        --palette-4: #00000099;
         --palette-5: #000;
         --palette-6: #fff;
         --palette-7: #F2F0F1;
@@ -28,21 +36,26 @@
         --palette-13: #FF3333;
         --palette-14: #FF33331A;
 
-        --main-text-color: var(--palette-1);
+        --main-text-color: var(--palette-5);
+      }
+
+      body {
+        font-family: 'Montserrat', sans-serif;
       }
     </style>                                     
 
     <link rel="stylesheet" href="{{ 'index.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'main-hero-section.css' | asset_url }}">
+
+
   </head>
+
 
   <body>
    {% sections 'header-group' %}
+   
 
-    <main>
-
-      {{ settings.test | capitalize }}
-
-      Hello world
+   <main>
       {{ content_for_layout }}
     </main>
 

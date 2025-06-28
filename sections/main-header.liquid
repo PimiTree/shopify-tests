@@ -1,15 +1,62 @@
-<p>{{ section.settings.header-text }}</p>
+<div class="main-container main-header-container">
+  <div class="header-logo-group">
+    {% render "icon-burger", class: "main-burger" %}
+
+    <div class="header-logo media-container contain">
+      <img src="{{ section.settings.header-logo | img_url: "master" }}" alt="">
+    </div>
+  </div>
+
+  <nav class="main-header-navigation">
+    <ul>
+      <li>
+        <a class="with-chevron" href="/">Shop
+          {% render "icon-chevron-down" %}
+        </a>
+      </li>
+      <li>
+        <a href="/">On Sale</a>
+      </li>
+      <li>
+        <a href="/">New Arrivals</a>
+      </li>
+      <li>
+        <a href="/">Brands</a>
+      </li>
+
+    </ul>
+  </nav>
+  
+  <search class="main-search-group">
+    <label>
+      {% render "icon-magnifier", class: "main-search-magnifier-icon" %}
+      <input type="search" placeholder="Search for products..." name="main-search">
+    </label>
+  </search>
+
+  
+
+  <menu class="header-menu">
+    <ul>
+      <li class="header-menu-magnifier"> {% render "icon-magnifier", class: "header-menu-icon header-menu-magnifier" %}</li>
+      <li> {% render "icon-cart", class: "header-menu-icon" %}</li>
+      <li> {% render "icon-user", class: "header-menu-icon" %}</li>
+    </ul>
+  </menu>
+</div>
+
+
 
 {% schema %}
 {
   "name": "Main Header",
   "tag": "header",
-  "class": "main-header",
+  "class": "main-header padding-appearance",
   "settings": [
     {
-      "type": "text",
-      "id": "header-text",
-      "label": "Test header text"
+      "type": "image_picker",
+      "id": "header-logo",
+      "label": "Header logo"
     }
   ]
 }

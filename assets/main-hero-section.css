@@ -1,0 +1,249 @@
+.main-hero-section {
+  padding-top: 36px;
+  background-color: var(--palette-7);
+}
+
+.main-hero-section__text-block {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 545px;
+}
+
+.main-hero-section__header {
+  font-size: 36px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.main-hero-section__subtitle {
+  margin-top: 15px;
+  color: var(--palette-4);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.main-hero-section__link {
+  margin: 15px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 210px;
+  height: 52px;
+  color: var(--palette-6);
+  font-weight: 500;
+  background-color: var(--palette-5);
+  border-radius: 52px;
+}
+
+.main-hero-section__achievements-wrapper {
+  margin: 20px auto 0;
+  width: max-content;
+  display: grid;
+  row-gap: 12px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.main-hero-section__achievements-item {
+  padding: 4px 9px;
+  width: min-content;
+}
+
+.main-hero-section__achievements-item:nth-child(1) {
+  justify-self: right;
+}
+
+.main-hero-section__achievements-item:nth-child(2) {
+  border-left: 1px solid var(--palette-2);
+}
+
+.main-hero-section__achievements-item:nth-child(3) {
+  margin: 0 auto;
+  grid-column: span 2;
+  width: max-content;
+}
+
+.main-hero-section__achievements-score {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: normal;
+  max-width: 140px;
+}
+
+.main-hero-section__achievements-text {
+  color: var(--palette-4);
+  font-size: 12px;
+  line-height: 1.8;
+  white-space: nowrap;
+}
+
+.main-hero-section__media-holder {
+  margin: 25px auto 0;
+  position: relative;
+  max-width: 545px;
+}
+
+.main-hero-section__media-container {
+  margin-top: auto;
+}
+
+.main-hero-section__spark {
+  position: absolute;
+}
+
+.main-hero-section__spark.small {
+  top: 30.6%;
+  left: 7%
+}
+
+.main-hero-section__spark.big {
+  top: 9%;
+  right: 5.4%;
+}
+
+.main-hero-section__spark {
+  color: var(--palette-5);
+}
+
+
+@media (min-width: 500px) {
+  .main-hero-section__achievements-wrapper {
+    grid-area: achievements;
+    margin-block: 48px;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: min-content;
+    width: min-content;
+  }
+
+  .main-hero-section__achievements-item {
+    /*padding-inline: calc(0.5625rem + 23 * (100vw - 768px) / (1200 - 768));*/
+  }
+
+  .main-hero-section__achievements-item:nth-child(1) {
+    padding-left: 0;
+  }
+
+  .main-hero-section__achievements-item:nth-child(3) {
+    grid-column: span 1;
+    border-left: 1px solid var(--palette-2);
+  }
+}
+
+@media (min-width: 768px) {
+  .main-hero-section__holder {
+    align-self: center;
+    grid-row: span 2;
+  }
+
+  .main-hero-section__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content 1fr;
+    grid-template-areas:
+        'text         media'
+        'achievements media';
+  }
+
+  .main-hero-section__text-block {
+    grid-area: text;
+    max-width: none;
+  }
+
+  .main-hero-section__achievements-wrapper {
+    margin: 48px 0 calc(3rem + -48 * (100vw - 768px) / ( 1200 - 768));
+  }
+
+  .main-hero-section__achievements-item {
+    padding-inline: calc(0.5625rem + 17 * (100vw - 768px) / ( 1200 - 768));
+  }
+
+  .main-hero-section__media-holder {
+    grid-area: media;
+    max-width: none;
+  }
+
+  .main-hero-section__link {
+    margin: 15px 0 0;
+  }
+
+  .main-hero-section__header {
+    font-size: calc(2.25rem + 28 * (100vw - 768px) / (1200 - 768));
+  }
+
+  .main-hero-section__subtitle {
+    margin-top: 23px;
+    font-size: 16px;
+  }
+
+  .main-hero-section__media-holder {
+    margin: 0;
+  }
+
+  .main-hero-section__media-container {
+    display: flex;
+    align-items: end;
+    width: 100%;
+    height: 100%;
+  }
+
+  .main-hero-section__media-container.main-hero-section__media-container img {
+    height: auto;
+  }
+
+  .main-hero-section__achievements-score {
+    font-size:  calc(1.5rem + 16 * (100vw - 768px) / 224);
+  }
+
+  .main-hero-section__achievements-text {
+    font-size: calc(0.75rem + 4 * (100vw - 768px) / 224);
+  }
+
+  .main-hero-section__spark.small {
+     --size: calc(2.75rem + 12 * (100vw - 768px) / 224);
+    width: var(--size);
+    height: var(--size);
+  }
+
+  .main-hero-section__spark.big {
+    --size: calc(4.75rem + 28 * (100vw - 768px) / 224);
+    width: var(--size);
+    height: var(--size);
+  }
+}
+
+@media (min-width: 992px) {
+  .main-hero-section__achievements-score {
+    font-size: 40px;
+  }
+
+  .main-hero-section__achievements-text {
+    font-size: 16px;
+  }
+
+  .main-hero-section__spark.small {
+    width: 56px;
+    height: 56px;
+  }
+
+  .main-hero-section__spark.big {
+
+    width: 104px;
+    height: 104px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main-hero-section__header {
+    font-size: 64px;
+  }
+
+  .main-hero-section__achievements-item {
+    padding-inline: 26px;
+  }
+
+  .main-hero-section__achievements-wrapper {
+    margin-bottom: 0;
+  }
+}
+
+

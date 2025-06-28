@@ -1,8 +1,13 @@
 {
   "sections": {
+    "main-hero-section": {
+      "type": "main-hero-section",
+      "settings": {
 
+      }
+    }
   },
   "order": [
-
+    "main-hero-section"
   ]
 }

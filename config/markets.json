@@ -8,24 +8,5 @@
  * ------------------------------------------------------------
  */
 {
-  "type": "header",
-  "name": "main-header",
-  "sections": {
-    "sign-up-announcement": {
-      "type": "sign-up-announcement",
-      "settings": {
-
-      }
-    },
-    "header": {
-      "type": "main-header",
-      "settings": {
-        "header-logo": "shopify://shop_images/logo.webp"
-      }
-    }
-  },
-  "order": [
-    "sign-up-announcement",
-    "header"
-  ]
+  "markets": {}
 }

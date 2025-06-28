@@ -1,0 +1,29 @@
+<div class="main-container">
+  {{ section.settings.announcement-text }}
+  <a href="/account/register">{{ section.settings.sign-up-link-text }}</a>
+
+  {% render "icon-x-mark", class: "x-mark" %}
+</div>
+
+
+{% schema %}
+{
+  "name": "Sign Up Announcement",
+  "tag": "div",
+  "class": "sign-up-announcement",
+  "settings": [
+    {
+      "type": "text",
+      "id": "announcement-text",
+      "label": "Enter announcement text",
+      "default": "Sign up and get 20% off to your first order."
+    },
+    {
+      "type": "text",
+      "id": "sign-up-link-text",
+      "label": "Enter announcement text",
+      "default": "Sign Up Now"
+    }
+  ]
+}
+{% endschema %}

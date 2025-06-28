@@ -1,4 +1,5 @@
 <p>{{ section.settings.text }}</p>
+
 {% content_for 'blocks' %}
 
 {% schema %}
@@ -12,6 +13,7 @@
       "id": "text",
       "label": "Common text"
     }
-  ]
+  ],
+  "blocks": [ {"type": "@theme"}]
 }
 {% endschema %}

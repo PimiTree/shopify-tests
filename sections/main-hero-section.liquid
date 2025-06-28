@@ -1,0 +1,102 @@
+<div class="main-container main-hero-section__container">
+
+  <div class="main-hero-section__holder">
+
+    <div class="main-hero-section__text-block padding-appearance nullify">
+      <h1 class="main-hero-section__header">{{ section.settings.header-text }}</h1>
+      <p class="main-hero-section__subtitle">{{ section.settings.subtitle-text }}</p>
+      <a class="main-hero-section__link" href="/collections">{{ section.settings.link-text }}</a>
+    </div>
+
+    <div class="main-hero-section__achievements-wrapper padding-appearance nullify">
+      <div class="main-hero-section__achievements-item">
+        <div class="main-hero-section__achievements-score" data-score="{{ section.settings.achievements-score-1 }}">0</div>
+        <p class="main-hero-section__achievements-text">{{ section.settings.achievements-text-1 }}</p>
+      </div>
+      <div class="main-hero-section__achievements-item">
+        <div class="main-hero-section__achievements-score" data-score="{{ section.settings.achievements-score-2 }}">0</div>
+        <p class="main-hero-section__achievements-text">{{ section.settings.achievements-text-2 }}</p>
+      </div>
+      <div class="main-hero-section__achievements-item">
+        <div class="main-hero-section__achievements-score" data-score="{{ section.settings.achievements-score-3 }}">0</div>
+        <p class="main-hero-section__achievements-text">{{ section.settings.achievements-text-3 }}</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="main-hero-section__media-holder">
+    <div class="main-hero-section__media-container media-container cover">
+      <img src="{{ section.settings.hero-img | img_url: 'master' }}" alt="{{ section.settings.hero-img.alt }}">
+    </div>
+
+    {% render "icon-star-spark", width: 44, height: 44, class: "main-hero-section__spark small" %}
+    {% render "icon-star-spark", width: 76, height: 76, class: "main-hero-section__spark big" %}
+  </div>
+
+
+</div>
+
+
+{% schema %}
+{
+  "name": "Main Hero Section",
+  "tag": "section",
+  "class": "main-hero-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header-text",
+      "label": "Header Text",
+      "default": "FIND CLOTHES THAT MATCHES YOUR STYLE"
+    },
+    {
+      "type": "text",
+      "id": "subtitle-text",
+      "label": "Subtitle Text",
+      "default": "Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style."
+    },
+    {
+      "type": "number",
+      "id": "achievements-score-1",
+      "label": "Achievements Score 1"
+    },
+    {
+      "type": "text",
+      "id": "achievements-text-1",
+      "label": "Achievements Text 1"
+    },
+    {
+      "type": "number",
+      "id": "achievements-score-2",
+      "label": "Achievements Score 2"
+    },
+    {
+      "type": "text",
+      "id": "achievements-text-2",
+      "label": "Achievements Text 2"
+    },
+    {
+      "type": "number",
+      "id": "achievements-score-3",
+      "label": "Achievements Score 3"
+    },
+    {
+      "type": "text",
+      "id": "achievements-text-3",
+      "label": "Achievements Text 3"
+    },
+    {
+      "type": "text",
+      "id": "link-text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero-img",
+      "label": "Hero Img"
+    }
+  ]
+}
+{% endschema %}
