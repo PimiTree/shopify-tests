@@ -1,9 +1,9 @@
-<div class="main-container main-header-container">
+<div class="main-container main-header__container">
   <div class="header-logo-group">
     {% render "icon-burger", class: "main-burger" %}
 
     <div class="header-logo media-container contain">
-      <img src="{{ section.settings.header-logo | img_url: "master" }}" alt="">
+      <img src="{{ section.settings.header-logo | img_url: "master" }}" alt="{{ section.settings.header-logo.alt }}">
     </div>
   </div>
 

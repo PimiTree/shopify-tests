@@ -1,13 +1,38 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main-hero-section": {
       "type": "main-hero-section",
       "settings": {
-
+        "header-text": "FIND CLOTHES THAT MATCHES YOUR STYLE",
+        "subtitle-text": "Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.",
+        "achievements-score-1": 200,
+        "achievements-text-1": "International Brands",
+        "achievements-score-2": 2000,
+        "achievements-text-2": "High-Quality Products",
+        "achievements-score-3": 30000,
+        "achievements-text-3": "Happy Customers",
+        "link-text": "Shop Now",
+        "hero-img": "shopify://shop_images/promo-block-banner-img_06ec8d85-15b4-40ac-9240-178a062aedaf.webp"
+      }
+    },
+    "new-arrival": {
+      "type": "product-list-section",
+      "settings": {
+        "collection": "newly-arrival"
       }
     }
   },
   "order": [
-    "main-hero-section"
+    "main-hero-section",
+    "new-arrival"
   ]
 }

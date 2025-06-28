@@ -1,0 +1,17 @@
+<div class="product-card">
+  <div class="media-container cover">
+    <img src="{{ product.images[1] | img_url: "master" }}" alt="{{ product.images[1].alt }}" decoding="async">
+  </div>
+  <h2>{{ product.title }}</h2>
+
+  {% assign discount_percent = product.metafields.productCustom.percentDiscount.value %}
+  {% if discount_percent != blank %}
+    {% assign discount_money = product.price_min | times: pdiscount_percent | divided_by: 100 %}
+    <p>{{ product.price_min | minus: discount_money | money_without_trailing_zeros }}</p>
+    <p>{{ product.price_min | money_without_trailing_zeros }}</p>
+    <p>-{{ discount_percent }}%</p>
+  {% else %}
+    <p>{{ product.price_min | money_without_trailing_zeros }}</p>
+  {% endif %}
+
+</div>

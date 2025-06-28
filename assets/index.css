@@ -168,7 +168,7 @@ address {
   padding-block: calc(0.8125rem + 12 * (100vw - 320px) / 448);
 }
 
-.main-header-container {
+.main-header__container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -267,7 +267,7 @@ address {
     padding-block: 25px;
   }
 
-  .main-header-container {
+  .main-header__container {
     height: calc(2.25rem + 12 * (100vw - 768px) / 224);
   }
 
@@ -285,7 +285,7 @@ address {
 }
 
 @media (min-width: 992px) {
-  .main-header-container {
+  .main-header__container {
     height: unset;
     gap: calc(1.25rem + 20 * (100vw - 992px) / 208);
   }
@@ -336,7 +336,7 @@ address {
 }
 
 @media (min-width: 1200px) {
-  .main-header-container {
+  .main-header__container {
     gap: 40px;
   }
 
