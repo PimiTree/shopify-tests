@@ -25,14 +25,23 @@
       }
     },
     "new-arrival": {
-      "type": "product-list-section",
+      "type": "collection-product-list-section",
       "settings": {
+        "header": "NEW ARRIVALS",
         "collection": "newly-arrival"
+      }
+    },
+    "top-selling": {
+      "type": "collection-product-list-section",
+      "settings": {
+        "header": "Top Selling",
+        "collection": "top-selling"
       }
     }
   },
   "order": [
     "main-hero-section",
-    "new-arrival"
+    "new-arrival",
+    "top-selling"
   ]
 }

@@ -157,9 +157,6 @@ address {
 }
 
 
-
-
-
 /*SHARED*/
 
 /*Header*/
@@ -259,6 +256,23 @@ address {
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
+}
+
+.button-type-1 {
+  margin: 0 auto;
+  padding: 16px 75px;
+  display: block;
+  width: max-content;
+  font-weight: 500;
+  border: 1px solid var(--palette-1);
+  border-radius: 62px;
+  transition: .3s ease-in-out;
+}
+
+.button-type-1:hover {
+  color: var(--palette-6);
+  border-color: var(--palette-4);
+  background-color: var(--palette-4);
 }
 
 

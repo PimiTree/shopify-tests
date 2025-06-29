@@ -42,11 +42,14 @@
       body {
         font-family: 'Montserrat', sans-serif;
       }
-    </style>                                     
+    </style>
 
+
+    <link rel="stylesheet" href="{{ 'swiper.min.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'index.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'main-hero-section.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'poroduct-list-section.css' | asset_url }}">
+
 
 
   </head>
@@ -62,6 +65,7 @@
 
     {% sections 'footer-group' %}
 
+   <script src="{{ 'swiper.min.js' | asset_url }}" defer></script>
    <script src="{{ 'index.js' | asset_url }}" defer></script>
   </body>
 </html>
