@@ -1,0 +1,35 @@
+<div class="main-container tiled-collection-section__container">
+  <h2 class="main-text-header">{{ section.settings.header }}</h2>
+
+  <div class="tiled-collection-section__tile-container">
+    {% for collection in section.settings.collections  %}
+      <div class="tiled-collection-section__tile">
+        <h3 class="tiled-collection-section__tile-header">{{ collection.title }}</h3>
+        <div class="tiled-collection-section__tile-img media-container cover">
+          {{ collection.image | image_url: width: 800 | image_tag}}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Tiled Collection List",
+  "tag": "section",
+  "class": "tiled-collection-section padding-appearance",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header",
+      "label": "Header"
+    },
+    {
+      "type": "collection_list",
+      "id": "collections",
+      "label": "Collection List"
+    }
+  ]
+}
+{% endschema %}

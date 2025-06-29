@@ -28,20 +28,37 @@
       "type": "collection-product-list-section",
       "settings": {
         "header": "NEW ARRIVALS",
-        "collection": "newly-arrival"
+        "collection": "newly-arrival",
+        "empty-msg": "",
+        "bottom-border": true
       }
     },
     "top-selling": {
       "type": "collection-product-list-section",
       "settings": {
         "header": "Top Selling",
-        "collection": "top-selling"
+        "collection": "top-selling",
+        "empty-msg": "",
+        "bottom-border": false
+      }
+    },
+    "tiled-dress-by-style": {
+      "type": "tiled-collection-section",
+      "settings": {
+        "header": "BROWSE BY dress STYLE",
+        "collections": [
+          "shirts",
+          "denim",
+          "party",
+          "gym"
+        ]
       }
     }
   },
   "order": [
     "main-hero-section",
     "new-arrival",
-    "top-selling"
+    "top-selling",
+    "tiled-dress-by-style"
   ]
 }

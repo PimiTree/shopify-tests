@@ -1,5 +1,5 @@
-<div class="main-container collection-product-list__container padding-appearance">
-  <h2 class="collection-product-list__header">{{ section.settings.header }}</h2>
+<div class="main-container collection-product-list__container padding-appearance {% if section.settings.bottom-border %}border-bottom{% endif %} ">
+  <h2 class="collection-product-list__header main-text-header">{{ section.settings.header }}</h2>
 
   {% if section.settings.collection.products.size == 0 %}
     <h3 class="collection-product-list__empty-msg">{{ section.settings.empty-msg | default: "No any product" }}</h3>
@@ -71,6 +71,11 @@
       "type": "text",
       "id": "empty-msg",
       "label": "Msg for empty block"
+    },
+    {
+      "type": "checkbox",
+      "id": "bottom-border",
+      "label": "Turn on bottom border"
     }
 
   ]

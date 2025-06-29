@@ -14,16 +14,16 @@
           {% render "icon-chevron-down" %}
         </a>
       </li>
-      <li>
-        <a href="/">On Sale</a>
-      </li>
-      <li>
-        <a href="/">New Arrivals</a>
-      </li>
-      <li>
-        <a href="/">Brands</a>
-      </li>
 
+      {% assign menu_links = linklists['main-menu'].links %}
+      {% for link in menu_links  %}
+        <li class="{% if link.current %}{{ active }}{% endif %}">
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        </li>
+      {% endfor %}
+      <li class="active">
+        <a href="/">Test</a>
+      </li>
     </ul>
   </nav>
   

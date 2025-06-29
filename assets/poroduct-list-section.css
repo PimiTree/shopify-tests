@@ -11,14 +11,11 @@
 .collection-product-list__container {
   padding-top: 71px;
   padding-bottom: 64px;
-  border-bottom: 1px solid var(--palette-2);
+
 }
 
-.collection-product-list__header {
-  font-size: 32px;
-  font-weight: 700;
-  text-align: center;
-  text-transform: uppercase;
+.collection-product-list__container.border-bottom {
+  border-bottom: 1px solid var(--palette-2);
 }
 
 .collection-product-list__carousel {
@@ -28,7 +25,6 @@
 .product-card {
   overflow: hidden;
 }
-
 
 .product-card__img {
   aspect-ratio: 0.99;
@@ -52,7 +48,7 @@
 }
 
 .product-card__star-container {
-  
+
   display: flex;
   gap: 5px;
 }
@@ -102,17 +98,13 @@
 
 
 @media (min-width: 768px) {
-  .collection-product-list__header {
-    font-size: 48px;
+  .product-card__title {
+    margin-top: 20px;
   }
 
-   .product-card__title {
-     margin-top: 20px;
-   }
-
-   .product-card__reviews {
-     margin-top: 8px;
-   }
+  .product-card__reviews {
+    margin-top: 8px;
+  }
 
   .product-card__star-container svg {
     width: 18px;

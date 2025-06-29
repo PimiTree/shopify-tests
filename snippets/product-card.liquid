@@ -1,6 +1,6 @@
 <a href="{{ product.url }}" class="product-card">
   <div class="product-card__img media-container cover">
-    <img src="{{ product.images[1] | img_url: "master" }}" alt="{{ product.images[1].alt }}" decoding="async">
+    {{ product.images[1] | image_url: width: 400 | image_tag }}
   </div>
   <h2 class="product-card__title">{{ product.title }}</h2>
 
@@ -9,9 +9,9 @@
     <div class="product-card__reviews">
       <div class="product-card__star-container">
 
-        {% assign ful_stars = rating | floor %}
+        {% assign full_stars = rating | floor %}
         {% assign half_star = rating | minus: ful_stars  %}
-        {% for variable in (1..ful_stars)  %}
+        {% for variable in (1..full_stars)  %}
           {% render "icon-star" %}
         {% endfor %}
         {% if half_star > 0 %}

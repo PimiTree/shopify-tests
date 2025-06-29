@@ -144,6 +144,9 @@ address {
   object-fit: cover;
 }
 
+.padding-appearance {
+  padding-inline: 16px;
+}
 
 .main-container {
   position: relative;
@@ -152,9 +155,14 @@ address {
   max-width: 1240px;
 }
 
-.padding-appearance {
-  padding-inline: 16px;
+.main-text-header {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
 }
+
+
 
 
 /*SHARED*/
@@ -277,6 +285,10 @@ address {
 
 
 @media (min-width: 768px) {
+  .main-text-header {
+    font-size: 48px;
+  }
+
   .main-header {
     padding-block: 25px;
   }
@@ -295,6 +307,18 @@ address {
     gap: 24px;
   }
 
+  .main-header-navigation li {
+    transition: .3s ease-in-out;
+  }
+
+  .main-header-navigation li.active {
+    font-weight: 600;
+    pointer-events: none;
+  }
+
+  .main-header-navigation li:not(.active):hover {
+    color: var(--palette-3);
+  }
 
 }
 
@@ -361,7 +385,6 @@ address {
     padding-inline: calc(1rem + -16 * (100vw - 1240px) / 32);
   }
 }
-
 
 @media (min-width: 1272px) {
   .padding-appearance {
