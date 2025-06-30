@@ -10,7 +10,7 @@
       <div class="product-card__star-container">
 
         {% assign full_stars = rating | floor %}
-        {% assign half_star = rating | minus: ful_stars  %}
+        {% assign half_star = rating | minus: full_stars  %}
         {% for variable in (1..full_stars)  %}
           {% render "icon-star" %}
         {% endfor %}

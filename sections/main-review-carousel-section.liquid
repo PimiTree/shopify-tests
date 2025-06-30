@@ -1,0 +1,125 @@
+<div class="main-container">
+  <div class="main-review-carousel-section__header-wrapper">
+    <h2 class="main-review-carousel-section__header main-text-header">{{ section.settings.header }}</h2>
+
+    <div class="main-review-carousel-section__button-wrapper">
+      <button class="button-prev">{% render "icon-arrow-left" %}</button>
+      <button class="button-next">{% render "icon-arrow-right" %}</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="main-review-carousel-section__carousel swiper">
+  <div class="swiper-wrapper">
+    {% content_for "blocks" %}
+  </div>
+</div>
+
+
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    function updateBlurEffect(swiper) {
+      const slides = swiper.slides;
+      const activeIndex = swiper.activeIndex;
+      const totalSlides = slides.length;
+
+      slides.forEach(slide => {
+        slide.classList.remove('blur-slide');
+      });
+
+      const nextNextIndex = activeIndex + 2;
+      const prevPrevIndex = activeIndex - 2;
+
+      if (nextNextIndex < totalSlides && slides[nextNextIndex]) {
+        slides[nextNextIndex].classList.add('blur-slide');
+      }
+
+      if (prevPrevIndex >= 0 && slides[prevPrevIndex]) {
+        slides[prevPrevIndex].classList.add('blur-slide');
+      }
+    }
+
+    function removeAllBlur(swiper) {
+      const slides = swiper.slides;
+      slides.forEach(slide => {
+        slide.classList.remove('blur-slide');
+      });
+    }
+
+    const swiperOptions = {
+      navigation: {
+        prevEl: ".main-review-carousel-section__button-wrapper .button-prev",
+        nextEl: ".main-review-carousel-section__button-wrapper .button-next"
+      },
+      initialSlide: 3,
+      spaceBetween: 20,
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          loop: true,
+
+        },
+        570: {
+          slidesPerView: 2,
+          loop: true,
+        },
+        992: {
+          slidesPerView: 4,
+          loop: false
+        }
+      }
+    }
+
+    {% assign blocks_count = section.blocks | size %}
+    {% if blocks_count >= 4 %}
+
+    swiperOptions.breakpoints["992"].centeredSlides = true;
+    swiperOptions.breakpoints["992"].slideActiveClass = "main-review-block_active";
+    swiperOptions.on = {
+      init: function () {
+        updateBlurEffect(this);
+      },
+      slideChangeTransitionStart: function () {
+        updateBlurEffect(this);
+      },
+      touchStart: function () {
+        removeAllBlur(this);
+      },
+      touchEnd: function () {
+        updateBlurEffect(this);
+      }
+    }
+    {% endif %}
+
+    {% if blocks_count >= 8 %}
+    swiperOptions.breakpoints["992"].loop = true;
+    {% endif %}
+
+    const instance = new Swiper('.main-review-carousel-section__carousel', swiperOptions);
+
+
+    console.log(instance);
+  })
+</script>
+
+
+{% schema %}
+{
+  "name": "Main Review Carousel",
+  "tag": "section",
+  "class": "main-review-carousel-section padding-appearance",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header",
+      "label": "Header"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "main-review-block"
+    }
+  ]
+}
+{% endschema %}
