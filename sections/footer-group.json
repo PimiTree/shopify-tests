@@ -11,14 +11,25 @@
   "type": "footer",
   "name": "main-footer",
   "sections": {
+    "subscribe-section": {
+      "type": "subscribe-section",
+      "settings": {
+        "header": "STAY UPTO DATE ABOUT OUR LATEST OFFERS",
+        "subscribe-input-placeholder": "Enter your email address",
+        "subscribe-submit-button-text": "Subscribe to Newsletter"
+      }
+    },
     "footer": {
       "type": "main-footer",
       "settings": {
-        "footer-text": "Some header text"
+        "footer-logo": "shopify://shop_images/logo.webp",
+        "footer-text": "We have clothes that suits your style and which you’re proud to wear. From women to men.",
+        "copyrights-text": "Shop.co © 2000-2023, All Rights Reserved"
       }
     }
   },
   "order": [
+    "subscribe-section",
     "footer"
   ]
 }

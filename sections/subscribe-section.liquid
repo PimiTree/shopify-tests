@@ -1,0 +1,43 @@
+<div class="subscribe-section__backdrop">
+  <div></div>
+  <div></div>
+</div>
+<div class="subscribe-section__container main-container">
+  <h2 class="subscribe-section__header">{{ section.settings.header }}</h2>
+
+  <form class="subscribe-section__form">
+    <label class="subscribe-section__label">
+      {% render "icon-email", class: "subscribe-section__label-icon" %}
+      <input class="subscribe-section__input" type="email" name="email" placeholder="{{ section.settings.subscribe-input-placeholder }}" required>
+    </label>
+
+    <button class="subscribe-section__submit-button" type="submit">{{ section.settings.subscribe-submit-button-text }}</button>
+  </form>
+</div>
+
+
+
+{% schema %}
+{
+  "name": "Subscribe section",
+  "tag": "section",
+  "class": "subscribe-section padding-appearance",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header",
+      "label": "Header"
+    },
+    {
+      "type": "text",
+      "id": "subscribe-input-placeholder",
+      "label": "Subscribe Input Placeholder"
+    },
+    {
+      "type": "text",
+      "id": "subscribe-submit-button-text",
+      "label": "Subscribe Submit Button Text"
+    }
+  ]
+}
+{% endschema %}

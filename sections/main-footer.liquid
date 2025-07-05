@@ -1,16 +1,74 @@
-<p>{{ section.settings.footer-text }}</p>
+<div class="main-footer__container main-container">
+  <div class="main-footer__promo">
+    <div class="main-footer__logo media-container contain">
+      {{ section.settings.footer-logo | image_url: width: 400 | image_tag }}
+    </div>
+    <p class="main-footer__text">{{ section.settings.footer-text }}</p>
+
+    <ul class="main-footer__social-list">
+      <li>
+        <a href="https://x.com/" target="_blank">{% render "icon-twitter" %}</a>
+      </li>
+      <li>
+        <a href="https://facebook.com/" target="_blank">{% render "icon-facebook" %}</a>
+      </li>
+      <li>
+        <a href="https://instagram.com/" target="_blank">{% render "icon-instagram" %}</a>
+      </li>
+      <li>
+        <a href="https://github.com/" target="_blank">{% render "icon-github" %}</a>
+      </li>
+    </ul>
+  </div>
+  <nav class="main-footer__navigation">
+    {% assign footer_nav_list = 'company,help,faq,resources' | split: "," %}
+    {% for nav_name in footer_nav_list %}
+      <div class="main-footer__navigation-list">
+        {% assign company_nav = linklists[nav_name] %}
+        <h3 class="main-footer__navigation-list-title">{{ company_nav.title }}</h3>
+        <ul>
+          {% for link in company_nav.links %}
+            <li>
+              <a class="main-footer__text" href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+  </nav>
+  <div class="main-footer__bottom">
+    <p class="main-footer__copyrights main-footer__text">{{ section.settings.copyrights-text }}</p>
+    <div class="main-footer__payment-methods">
+      <div>{% render "icon-visa" %}</div>
+      <div>{% render "icon-mastercard" %}</div>
+      <div>{% render "icon-paypal" %}</div>
+      <div>{% render "icon-apple-pay" %}</div>
+      <div>{% render "icon-g-pay" %}</div>
+    </div>
+  </div>
+</div>
 
 
 {% schema %}
 {
   "name": "Main Footer",
   "tag": "footer",
-  "class": "main-footer",
+  "class": "main-footer padding-appearance",
   "settings": [
+    {
+      "type": "image_picker",
+      "id": "footer-logo",
+      "label": "Footer Logo"
+    },
     {
       "type": "text",
       "id": "footer-text",
-      "label": "Test text for footer"
+      "label": "Text Footer"
+    },
+    {
+      "type": "text",
+      "id": "copyrights-text",
+      "label": "Copyrights Text"
     }
   ]
 }

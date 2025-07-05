@@ -1,5 +1,7 @@
 .main-review-carousel-section {
   margin-top: 50px;
+  padding: 10px;
+  overflow: hidden;
 }
 
 .main-review-carousel-section__header-wrapper {
