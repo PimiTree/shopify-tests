@@ -1,0 +1,83 @@
+<div class="main-container collection-product-list__container padding-appearance {% if section.settings.bottom-border %}border-bottom{% endif %} ">
+  <h2 class="collection-product-list__header main-text-header">{{ section.settings.header }}</h2>
+
+  {% if section.settings.collection.products.size == 0 %}
+    <h3 class="collection-product-list__empty-msg">{{ section.settings.empty-msg | default: "No any product" }}</h3>
+  {% else %}
+    {% assign iterator = 0 %}
+
+    <div class="swiper collection-product-list__carousel collection-product-list__swiper-{{ section.index }}">
+      <div class="swiper-wrapper">
+        {% for product in section.settings.collection.products %}
+          {% if product.available and iterator < 4 %}
+            {% assign iterator = iterator | plus: 1 %}
+            <div class="collection-product-list__carousel-slide swiper-slide">
+              {% render "product-card", product: product %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+
+  <a class="collection-product-list__view-all button-type-1" href="{{ section.settings.collection.url }}">View All</a>
+</div>
+
+
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+      new Swiper('.collection-product-list__swiper-{{ section.index }}', {
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 16
+          },
+          500: {
+            slidesPerView: 2,
+            spaceBetween: 21
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 21
+          },
+          992: {
+            slidesPerView: 4,
+            spaceBetween: 21
+          }
+        }
+      });
+  })
+</script>
+
+
+{% schema %}
+{
+  "name": "Product List",
+  "tag": "section",
+  "class": "collection-product-list",
+  "settings": [
+
+    {
+      "type": "text",
+      "id": "header",
+      "label": "Header"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "View the first 4 elements of collection"
+    },
+    {
+      "type": "text",
+      "id": "empty-msg",
+      "label": "Msg for empty block"
+    },
+    {
+      "type": "checkbox",
+      "id": "bottom-border",
+      "label": "Turn on bottom border"
+    }
+
+  ]
+}
+{% endschema %}

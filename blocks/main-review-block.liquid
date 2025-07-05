@@ -1,0 +1,76 @@
+<section class="main-review-block {% if block.settings.is-slide %}swiper-slide{% endif %}" {{ block.shopify_attributes }}>
+  {% assign rating = block.settings.rating %}
+  <div class="main-review-block__star-container">
+    {% assign full_stars = rating | floor %}
+    {% assign half_star = rating | minus: full_stars  %}
+    {% for variable in (1..full_stars)  %}
+      {% render "icon-star" %}
+    {% endfor %}
+    {% if half_star > 0 %}
+      {% render "icon-star-half" %}
+    {% endif %}
+  </div>
+
+  <h3 class="main-review-block__name">
+    {{ block.settings.name }}
+    {% render "icon-check-mark-round" %}
+  </h3>
+
+   <p class="main-review-block__comment">{{ block.settings.comment }}</p>
+</section>
+
+
+{% schema %}
+{
+  "name": "Main Review Block",
+  "tag": null,
+  "class": "main-review-block",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "is-slide",
+      "label": "Turn On for slides context",
+      "default": true
+    },
+    {
+      "type": "range",
+      "step": 0.5,
+      "min": 0,
+      "max": 5,
+      "id": "rating",
+      "label": "Comment Rating",
+      "default": 3
+    },
+    {
+      "type": "text",
+      "id": "name",
+      "label": "Commentator's name"
+    },
+    {
+      "type": "richtext",
+      "id": "comment",
+      "label": "Comment text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Comment Slide",
+      "settings": {
+        "is-slide": true,
+        "rating": 3,
+        "name": "Garry",
+        "comment": ""
+      }
+    },
+    {
+      "name": "Comment Tiles",
+      "settings": {
+        "is-slide": false,
+        "rating": 3,
+        "name": "Garry",
+        "comment": ""
+      }
+    }
+  ]
+}
+{% endschema %}

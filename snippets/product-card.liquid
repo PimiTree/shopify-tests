@@ -1,0 +1,39 @@
+<a href="{{ product.url }}" class="product-card">
+  <div class="product-card__img media-container cover">
+    {{ product.images[1] | image_url: width: 400 | image_tag }}
+  </div>
+  <h2 class="product-card__title">{{ product.title }}</h2>
+
+  {% assign rating = product.metafields.productCustom.rating %}
+  {% if rating != blank and rating != 0 %}
+    <div class="product-card__reviews">
+      <div class="product-card__star-container">
+
+        {% assign full_stars = rating | floor %}
+        {% assign half_star = rating | minus: full_stars  %}
+        {% for variable in (1..full_stars)  %}
+          {% render "icon-star" %}
+        {% endfor %}
+        {% if half_star > 0 %}
+          {% render "icon-star-half" %}
+        {% endif %}
+      </div>
+      <div>{{rating}}/5</div>
+    </div>
+  {% endif %}
+ 
+
+
+  <div class="product-card__price-row">
+    {% assign discount_percent = product.metafields.productCustom.percentDiscount.value %}
+    {% if discount_percent != blank %}
+
+      {% assign discount_money = product.price_min | times: discount_percent | divided_by: 100 %}
+      <p class="product-card__price">{{ product.price_min | minus: discount_money | money_without_trailing_zeros }}</p>
+      <p class="product-card__old-price">{{ product.price_min | money_without_trailing_zeros }}</p>
+      <p class="product-card__discount">-{{ discount_percent }}%</p>
+    {% else %}
+      <p class="product-card__price">{{ product.price_min | money_without_trailing_zeros }}</p>
+    {% endif %}
+  </div>
+</a>

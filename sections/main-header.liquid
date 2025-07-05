@@ -1,10 +1,10 @@
-<div class="main-container main-header-container">
+<div class="main-container main-header__container">
   <div class="header-logo-group">
     {% render "icon-burger", class: "main-burger" %}
 
-    <div class="header-logo media-container contain">
-      <img src="{{ section.settings.header-logo | img_url: "master" }}" alt="">
-    </div>
+    <a href="/" class="header-logo media-container contain">
+      {{ section.settings.header-logo | image_url: width: 400 | image_tag }}
+    </a>
   </div>
 
   <nav class="main-header-navigation">
@@ -14,16 +14,13 @@
           {% render "icon-chevron-down" %}
         </a>
       </li>
-      <li>
-        <a href="/">On Sale</a>
-      </li>
-      <li>
-        <a href="/">New Arrivals</a>
-      </li>
-      <li>
-        <a href="/">Brands</a>
-      </li>
 
+      {% assign menu_links = linklists['main-menu'].links %}
+      {% for link in menu_links  %}
+        <li class="{% if link.current %}active{% endif %}">
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        </li>
+      {% endfor %}
     </ul>
   </nav>
   
